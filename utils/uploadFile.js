@@ -1,7 +1,7 @@
 const multer  = require('multer');
 const { GridFsStorage } = require('multer-gridfs-storage');
 
-const storage = new GridFsStorage({ 
+const storage = GridFsStorage({ 
     url: process.env.MONGO_URL,
     file: (req, file) => {
         if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
